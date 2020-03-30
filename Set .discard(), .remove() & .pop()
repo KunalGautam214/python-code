@@ -1,0 +1,27 @@
+#Example of pop(), remove() and discard() methods.
+n = int(input())
+s = set(map(int, input().split()))
+N = int(input())
+for i in range(N):
+    l = list(map(str, input().split()))
+    operations = l[0]
+    value = 0
+    if len(l) > 1:
+        value = int(l[1])
+    
+    if operations == 'pop':
+        if len(s) > 0:
+            s.pop()
+    elif operations == 'remove':
+        
+        if len(s) > 0:
+            if value in s:
+                s.remove(value)
+    elif operations == 'discard':
+        
+        if len(s) > 0:
+            s.discard(value)
+sum = 0
+for i in s:
+    sum += int(i)
+print(sum)
